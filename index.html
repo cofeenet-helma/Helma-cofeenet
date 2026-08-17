@@ -231,6 +231,87 @@
             font-weight: bold;
         }
 
+        /* Detailed Services */
+
+.detailed-services {
+    background: #f7f9fb;
+}
+
+.detail-card {
+    background: #ffffff;
+    border: 1px solid #e4ebef;
+    border-radius: 18px;
+    padding: 26px;
+    margin-bottom: 18px;
+}
+
+.detail-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.detail-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: #eef5f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+    flex-shrink: 0;
+}
+
+.detail-header h3 {
+    color: #173247;
+    margin-bottom: 3px;
+    font-size: 19px;
+}
+
+.detail-header p {
+    color: #71808b;
+    font-size: 13px;
+}
+
+.service-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.service-list div {
+    background: #f8fafb;
+    border-radius: 10px;
+    padding: 10px 13px;
+    color: #526270;
+    font-size: 13px;
+}
+
+.service-list div::before {
+    content: "✓";
+    color: #12618c;
+    font-weight: bold;
+    margin-left: 7px;
+}
+
+@media (max-width: 600px) {
+
+    .detail-card {
+        padding: 20px;
+    }
+
+    .service-list {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-header h3 {
+        font-size: 17px;
+    }
+
+}
+        
         /* Contact */
 
         .contact-grid {
@@ -598,6 +679,280 @@
 
     </section>
 
+    <!-- Detailed Services -->
+
+<section class="detailed-services" id="detailed-services">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>خدمات حلما</h2>
+            <p>جزئیات خدمات قابل ارائه در کافی‌نت حلما</p>
+        </div>
+
+
+        <!-- 1. خدمات دولتی -->
+
+        <div class="detail-card" id="government">
+
+            <div class="detail-header">
+                <span class="detail-icon">📝</span>
+
+                <div>
+                    <h3>ثبت‌نام و خدمات دولتی</h3>
+                    <p>انجام امور اینترنتی سامانه‌های دولتی</p>
+                </div>
+            </div>
+
+            <div class="service-list">
+
+                <div>سامانه‌های دولتی</div>
+                <div>سامانه سخا</div>
+                <div>خدمات یارانه</div>
+                <div>خدمات ثبت احوال</div>
+                <div>ثبت کد فیدا</div>
+                <div>سایر ثبت‌نام‌ها و خدمات اینترنتی دولتی</div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 2. امور قضایی -->
+
+        <div class="detail-card" id="judicial">
+
+            <div class="detail-header">
+                <span class="detail-icon">⚖️</span>
+
+                <div>
+                    <h3>امور قضایی</h3>
+                    <p>خدمات اینترنتی و ثبت درخواست‌های قضایی</p>
+                </div>
+            </div>
+
+            <div class="service-list">
+
+                <div>دریافت ابلاغیه</div>
+                <div>گواهی عدم سوءپیشینه</div>
+                <div>خدمات سامانه‌های قضایی</div>
+                <div>سایر خدمات اینترنتی قضایی</div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 3. بیمه و تامین اجتماعی -->
+
+        <div class="detail-card" id="insurance">
+
+            <div class="detail-header">
+                <span class="detail-icon">🏥</span>
+
+                <div>
+                    <h3>بیمه و تأمین اجتماعی</h3>
+                    <p>خدمات مربوط به تأمین اجتماعی و بیمه</p>
+                </div>
+            </div>
+
+            <div class="service-list">
+
+                <div>ثبت‌نام پروفایل تأمین اجتماعی</div>
+                <div>دریافت سوابق تأمین اجتماعی</div>
+                <div>دریافت فیش حقوقی</div>
+                <div>دریافت حکم بازنشستگی</div>
+                <div>نامه کسر از اقساط بازنشستگان</div>
+                <div>ثبت درخواست بیمه بیکاری</div>
+                <div>پرداخت آنلاین حق بیمه</div>
+                <div>ارسال لیست بیمه</div>
+                <div>کمک‌هزینه عینک</div>
+                <div>کمک‌هزینه سمعک</div>
+                <div>سایر خدمات تأمین اجتماعی</div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 4. چاپ و خدمات کامپیوتری -->
+
+        <div class="detail-card" id="printing">
+
+            <div class="detail-header">
+                <span class="detail-icon">🖨️</span>
+
+                <div>
+                    <h3>چاپ و خدمات کامپیوتری</h3>
+                    <p>خدمات چاپ، اسکن و آماده‌سازی فایل</p>
+                </div>
+            </div>
+
+            <div class="service-list">
+
+                <div>پرینت رنگی A4</div>
+                <div>پرینت سیاه‌وسفید A4</div>
+                <div>پرینت رنگی A5</div>
+                <div>پرینت سیاه‌وسفید A5</div>
+                <div>کپی</div>
+                <div>اسکن مدارک</div>
+                <div>نمابر</div>
+                <div>تایپ</div>
+                <div>ویرایش فایل</div>
+                <div>ارسال و دریافت ایمیل</div>
+                <div>پرس کارت</div>
+                <div>خدمات فایل و PDF</div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 5. خودرو و موتورسیکلت -->
+
+        <div class="detail-card" id="vehicle">
+
+            <div class="detail-header">
+                <span class="detail-icon">🚗</span>
+
+                <div>
+                    <h3>خدمات خودرو و موتورسیکلت</h3>
+                    <p>خدمات اینترنتی و استعلام‌های خودرو</p>
+                </div>
+            </div>
+
+            <div class="service-list">
+
+                <div>پرداخت خلافی خودرو</div>
+                <div>پرداخت عوارض آزادراهی</div>
+                <div>پرداخت طرح ترافیک</div>
+                <div>نوبت‌دهی تعویض پلاک</div>
+                <div>احراز نشانی پست</div>
+                <div>ثبت‌نام تهران من خودرو</div>
+                <div>کارت سلامت راننده</div>
+                <div>کارت خودرو</div>
+                <div>لیست پلاک‌ها</div>
+                <div>تاریخچه پلاک</div>
+                <div>استعلام تصادفات رانندگی</div>
+                <div>ثبت‌نام مالیات نقل‌وانتقال خودرو</div>
+                <div>پرداخت مالیات نقل‌وانتقال خودرو</div>
+                <div>عوارض شهرداری</div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 6. مالیات -->
+
+        <div class="detail-card" id="tax">
+
+            <div class="detail-header">
+                <span class="detail-icon">💰</span>
+
+                <div>
+                    <h3>خدمات مالیاتی</h3>
+                    <p>ثبت‌نام، اظهارنامه و خدمات سامانه‌های مالیاتی</p>
+                </div>
+            </div>
+
+            <div class="service-list">
+
+                <div>گام چهار مالیاتی</div>
+                <div>دریافت کد رهگیری مالیاتی</div>
+                <div>اظهارنامه املاک و مستغلات</div>
+                <div>اظهارنامه عملکرد</div>
+                <div>اظهارنامه ارزش افزوده</div>
+                <div>سایر خدمات سامانه‌های مالیاتی</div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 7. املاک -->
+
+        <div class="detail-card" id="property">
+
+            <div class="detail-header">
+                <span class="detail-icon">🏠</span>
+
+                <div>
+                    <h3>خدمات املاک و مسکن</h3>
+                    <p>ثبت و پیگیری خدمات مربوط به املاک و مسکن</p>
+                </div>
+            </div>
+
+            <div class="service-list">
+
+                <div>املاک و اسکان</div>
+                <div>ثبت و اصلاح اطلاعات املاک</div>
+                <div>کد رهگیری</div>
+                <div>ثبت‌نام مسکن ملی</div>
+                <div>ودیعه مسکن</div>
+                <div>سایر خدمات اینترنتی مسکن</div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 8. دانشجویی -->
+
+        <div class="detail-card" id="student">
+
+            <div class="detail-header">
+                <span class="detail-icon">🎓</span>
+
+                <div>
+                    <h3>خدمات دانشجویی</h3>
+                    <p>ثبت‌نام و خدمات اینترنتی دانشجویان</p>
+                </div>
+            </div>
+
+            <div class="service-list">
+
+                <div>ثبت‌نام آزمون</div>
+                <div>ثبت‌نام دانشگاه</div>
+                <div>دریافت کارت آزمون</div>
+                <div>خدمات سامانه‌های دانشگاهی</div>
+                <div>پرینت جزوات دانشگاهی</div>
+                <div>صحافی جزوات دانشگاهی</div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 9. دانش‌آموزی -->
+
+        <div class="detail-card" id="school">
+
+            <div class="detail-header">
+                <span class="detail-icon">🏫</span>
+
+                <div>
+                    <h3>خدمات دانش‌آموزی</h3>
+                    <p>خدمات ثبت‌نام و امور اینترنتی مدارس</p>
+                </div>
+            </div>
+
+            <div class="service-list">
+
+                <div>پیش‌ثبت‌نام مدارس</div>
+                <div>ثبت‌نام کتب درسی</div>
+                <div>دریافت کارنامه</div>
+                <div>خدمات سامانه‌های دانش‌آموزی</div>
+                <div>پرینت کتب درسی</div>
+                <div>صحافی کتب درسی</div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
     <!-- Ordering -->
 
