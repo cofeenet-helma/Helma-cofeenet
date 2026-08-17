@@ -235,6 +235,7 @@
 
 .detailed-services {
     background: #f7f9fb;
+    display: none;
 }
 
 .detail-card {
@@ -1095,5 +1096,49 @@
 
 </footer>
 
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const serviceCards = document.querySelectorAll(".services .service-card");
+    const detailCards = document.querySelectorAll(".detailed-services .detail-card");
+    const detailedSection = document.querySelector(".detailed-services");
+
+    serviceCards.forEach(function (card) {
+
+        const link = card.querySelector(".service-order");
+
+        if (!link) return;
+
+        link.addEventListener("click", function (event) {
+
+            event.preventDefault();
+
+            const targetId = link.getAttribute("href").substring(1);
+
+            detailCards.forEach(function (detail) {
+                detail.style.display = "none";
+            });
+
+            const targetDetail = document.getElementById(targetId);
+
+            if (targetDetail) {
+
+                detailedSection.style.display = "block";
+                targetDetail.style.display = "block";
+
+                detailedSection.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            }
+
+        });
+
+    });
+
+});
+</script>
+    
 </body>
 </html>
