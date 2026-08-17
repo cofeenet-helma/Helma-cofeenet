@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>کافی‌نت حلما | خدمات اینترنتی و اداری</title>
+
+    <meta name="description"
+          content="کافی‌نت حلما؛ ارائه خدمات اینترنتی، اداری، ثبت‌نام، چاپ، اسکن و سفارش غیرحضوری">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Tahoma, Arial, sans-serif;
+            background: #f7f9fb;
+            color: #173247;
+            line-height: 1.8;
+        }
+
+        .container {
+            width: min(1100px, 92%);
+            margin: auto;
+        }
+
+        /* Header */
+
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid #e6edf2;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: bold;
+            color: #0b2742;
+            font-size: 18px;
+        }
+
+        .brand-logo {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        nav {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #526270;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #12618c;
+        }
+
+        /* Hero */
+
+        .hero {
+            background: #ffffff;
+            padding: 80px 0;
+        }
+
+        .hero-content {
+            max-width: 760px;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 52px);
+            color: #0b2742;
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            color: #64727e;
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 650px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 0 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .btn-primary {
+            background: #12618c;
+            color: #ffffff;
+        }
+
+        .btn-secondary {
+            background: #eef5f8;
+            color: #12618c;
+        }
+
+        /* Sections */
+
+        section {
+            padding: 70px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 30px;
+            color: #0b2742;
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: #71808b;
+        }
+
+        /* Services */
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .service-card {
+            background: #ffffff;
+            border: 1px solid #e4ebef;
+            border-radius: 18px;
+            padding: 25px;
+            transition: 0.2s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(20, 50, 70, 0.08);
+        }
+
+        .service-icon {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 8px;
+            color: #173247;
+        }
+
+        .service-card p {
+            color: #71808b;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .service-order {
+            display: inline-block;
+            color: #12618c;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        /* Ordering */
+
+        .order-box {
+            background: #0b2742;
+            color: white;
+            border-radius: 24px;
+            padding: 45px;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .step-number {
+            width: 46px;
+            height: 46px;
+            margin: 0 auto 12px;
+            border-radius: 50%;
+            background: #e9a72c;
+            color: #0b2742;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        /* Contact */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .contact-box {
+            background: white;
+            border: 1px solid #e4ebef;
+            border-radius: 18px;
+            padding: 30px;
+        }
+
+        .contact-box h3 {
+            margin-bottom: 15px;
+        }
+
+        .contact-link {
+            display: block;
+            padding: 12px 0;
+            color: #12618c;
+            text-decoration: none;
+        }
+
+        /* Footer */
+
+        footer {
+            background: #0b2742;
+            color: white;
+            text-align: center;
+            padding: 35px 0;
+        }
+
+        footer p {
+            opacity: 0.8;
+            font-size: 14px;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 800px) {
+
+            nav {
+                display: none;
+            }
+
+            .hero {
+                padding: 55px 0;
+            }
+
+            .services {
+                grid-template-columns: 1fr;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .order-box {
+                padding: 30px 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container header-inner">
+
+        <div class="brand">
+            <img class="brand-logo"
+                 src="logo.png"
+                 alt="لوگوی کافی‌نت حلما">
+
+            <span>کافی‌نت حلما</span>
+        </div>
+
+        <nav>
+            <a href="#services">خدمات</a>
+            <a href="#order">سفارش غیرحضوری</a>
+            <a href="#contact">ارتباط با ما</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<main>
+
+    <!-- Hero -->
+
+    <section class="hero">
+
+        <div class="container">
+
+            <div class="hero-content">
+
+                <h1>
+                    کافی‌نت حلما
+                </h1>
+
+                <p>
+                    خدمات اینترنتی، اداری و ثبت‌نامی
+                    به‌صورت حضوری و غیرحضوری.
+                    خدمت موردنظر خود را انتخاب کنید و
+                    سفارش خود را برای ما ارسال کنید.
+                </p>
+
+                <div class="buttons">
+
+                    <a class="btn btn-primary"
+                       href="#services">
+                        مشاهده خدمات
+                    </a>
+
+                    <a class="btn btn-secondary"
+                       href="tel:09194960543">
+                        📞 تماس با حلما
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Services -->
+
+    <section id="services">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    خدمات کافی‌نت حلما
+                </h2>
+
+                <p>
+                    خدمت موردنظر خود را انتخاب کنید
+                </p>
+
+            </div>
+
+
+            <div class="services">
+
+                <div class="service-card">
+
+                    <div class="service-icon">📝</div>
+
+                    <h3>
+                        خدمات اداری
+                    </h3>
+
+                    <p>
+                        انجام ثبت‌نام‌ها و امور اینترنتی
+                        سامانه‌های مختلف.
+                    </p>
+
+                    <a class="service-order"
+                       href="#">
+                        سفارش این خدمت ←
+                    </a>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-icon">🏠</div>
+
+                    <h3>
+                        املاک و اسکان
+                    </h3>
+
+                    <p>
+                        ثبت و اصلاح اطلاعات ملک و خانوار
+                        در سامانه مربوطه.
+                    </p>
+
+                    <a class="service-order"
+                       href="#">
+                        سفارش این خدمت ←
+                    </a>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-icon">🚗</div>
+
+                    <h3>
+                        خدمات خودرو
+                    </h3>
+
+                    <p>
+                        انجام خدمات اینترنتی مرتبط با
+                        خودرو و استعلام‌ها.
+                    </p>
+
+                    <a class="service-order"
+                       href="#">
+                        سفارش این خدمت ←
+                    </a>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-icon">⚖️</div>
+
+                    <h3>
+                        خدمات قضایی
+                    </h3>
+
+                    <p>
+                        انجام امور اینترنتی و ثبت درخواست‌های
+                        مرتبط با خدمات قضایی.
+                    </p>
+
+                    <a class="service-order"
+                       href="#">
+                        سفارش این خدمت ←
+                    </a>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-icon">🖨️</div>
+
+                    <h3>
+                        پرینت و کپی
+                    </h3>
+
+                    <p>
+                        پرینت رنگی و سیاه‌وسفید،
+                        کپی و خدمات چاپی.
+                    </p>
+
+                    <a class="service-order"
+                       href="#">
+                        سفارش این خدمت ←
+                    </a>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-icon">⌨️</div>
+
+                    <h3>
+                        تایپ و ویرایش
+                    </h3>
+
+                    <p>
+                        تایپ، ویرایش و آماده‌سازی
+                        فایل‌های Word و PDF.
+                    </p>
+
+                    <a class="service-order"
+                       href="#">
+                        سفارش این خدمت ←
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Ordering -->
+
+    <section id="order">
+
+        <div class="container">
+
+            <div class="order-box">
+
+                <h2>
+                    📲 سفارش غیرحضوری
+                </h2>
+
+                <p>
+                    بدون مراجعه حضوری، درخواست خود را
+                    برای حلما ارسال کنید.
+                </p>
+
+
+                <div class="steps">
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            ۱
+                        </div>
+
+                        <strong>
+                            انتخاب خدمت
+                        </strong>
+
+                    </div>
+
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            ۲
+                        </div>
+
+                        <strong>
+                            ارسال درخواست و مدارک
+                        </strong>
+
+                    </div>
+
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            ۳
+                        </div>
+
+                        <strong>
+                            اعلام هزینه و انجام کار
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+
+    <section id="contact">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    ارتباط با حلما
+                </h2>
+
+                <p>
+                    از هر راهی که برایتان راحت‌تر است با ما در ارتباط باشید.
+                </p>
+
+            </div>
+
+
+            <div class="contact-grid">
+
+                <div class="contact-box">
+
+                    <h3>
+                        📞 تماس مستقیم
+                    </h3>
+
+                    <a class="contact-link"
+                       href="tel:09194960543">
+                        0919 496 0543
+                    </a>
+
+                </div>
+
+
+                <div class="contact-box">
+
+                    <h3>
+                        📱 شبکه‌های اجتماعی
+                    </h3>
+
+                    <a class="contact-link"
+                       href="https://cofeenet-helma.github.io">
+                        مشاهده تمام راه‌های ارتباطی حلما ←
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div class="container">
+
+        <strong>
+            کافی‌نت حلما
+        </strong>
+
+        <p>
+            خدمات اینترنتی و اداری
+        </p>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
