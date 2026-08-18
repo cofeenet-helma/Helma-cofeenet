@@ -312,6 +312,63 @@
     }
 
 }
+
+.whatsapp-order {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 8px 12px;
+    border-radius: 9px;
+    background: #25D366;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    white-space: nowrap;
+    transition: 0.2s;
+}
+
+.whatsapp-order:hover {
+    transform: translateY(-1px);
+    opacity: 0.9;
+}
+
+.service-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background: #f8fafb;
+    border-radius: 10px;
+    padding: 10px 12px;
+}
+
+.service-item span {
+    color: #526270;
+    font-size: 13px;
+}
+
+.service-item::before {
+    display: none;
+}
+
+@media (max-width: 600px) {
+
+    .service-item {
+        padding: 11px;
+    }
+
+    .service-item span {
+        font-size: 12px;
+    }
+
+    .whatsapp-order {
+        padding: 7px 10px;
+        font-size: 11px;
+    }
+
+}
         
         /* Contact */
 
