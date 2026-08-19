@@ -1231,36 +1231,120 @@
 
 </footer>
 
-    <script>
+   <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-    const serviceCards = document.querySelectorAll(".services .service-card");
-    const detailCards = document.querySelectorAll(".detailed-services .detail-card");
-    const detailedSection = document.querySelector(".detailed-services");
+    /* ================================
+       WhatsApp Settings
+    ================================= */
+
+    const whatsappNumber = "989194960543";
+
+
+    /* ================================
+       Service Details Navigation
+    ================================= */
+
+    const serviceCards = document.querySelectorAll(
+        ".services .service-card"
+    );
+
+    const detailCards = document.querySelectorAll(
+        ".detailed-services .detail-card"
+    );
+
+    const detailedSection = document.querySelector(
+        ".detailed-services"
+    );
+
+
+    /* ================================
+       Create WhatsApp Order Buttons
+    ================================= */
+
+    const serviceItems = document.querySelectorAll(
+        ".detailed-services .service-list > div"
+    );
+
+    serviceItems.forEach(function (item) {
+
+        /* جلوگیری از ساخت دکمه تکراری */
+        if (item.querySelector(".whatsapp-order")) {
+            return;
+        }
+
+        const serviceName = item.textContent.trim();
+
+        /* متن آماده واتساپ */
+        const message =
+            "سلام، برای خدمت «" +
+            serviceName +
+            "» می‌خواهم از کافی‌نت حلما سفارش ثبت کنم.";
+
+        const whatsappLink =
+            "https://wa.me/" +
+            whatsappNumber +
+            "?text=" +
+            encodeURIComponent(message);
+
+        /* ساخت دکمه */
+        const button = document.createElement("a");
+
+        button.className = "whatsapp-order";
+        button.href = whatsappLink;
+        button.target = "_blank";
+        button.rel = "noopener noreferrer";
+        button.textContent = "📲 سفارش";
+
+        /* ساختار جدید آیتم */
+        const text = document.createElement("span");
+        text.textContent = serviceName;
+
+        item.textContent = "";
+        item.classList.add("service-item");
+
+        item.appendChild(text);
+        item.appendChild(button);
+
+    });
+
+
+    /* ================================
+       Category Navigation
+    ================================= */
 
     serviceCards.forEach(function (card) {
 
         const link = card.querySelector(".service-order");
 
-        if (!link) return;
+        if (!link) {
+            return;
+        }
 
         link.addEventListener("click", function (event) {
 
             event.preventDefault();
 
-            const targetId = link.getAttribute("href").substring(1);
+            const targetId =
+                link.getAttribute("href").substring(1);
 
+            /* مخفی کردن همه دسته‌ها */
             detailCards.forEach(function (detail) {
                 detail.style.display = "none";
             });
 
-            const targetDetail = document.getElementById(targetId);
+            const targetDetail =
+                document.getElementById(targetId);
 
             if (targetDetail) {
 
+                /* نمایش بخش جزئیات */
                 detailedSection.style.display = "block";
+
+                /* نمایش فقط دسته انتخاب‌شده */
                 targetDetail.style.display = "block";
 
+                /* حرکت نرم به بخش خدمات */
                 detailedSection.scrollIntoView({
                     behavior: "smooth",
                     block: "start"
