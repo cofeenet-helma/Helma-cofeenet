@@ -130,55 +130,97 @@ nav a:hover::after {
 
         /* Hero */
 
-        .hero {
-            background: #ffffff;
-            padding: 80px 0;
-        }
+       /* Hero */
 
-        .hero-content {
-            max-width: 760px;
-        }
+.hero {
+    background: #ffffff;
+    padding: 70px 0 65px;
+}
 
-        .hero h1 {
-            font-size: clamp(32px, 5vw, 52px);
-            color: #0b2742;
-            margin-bottom: 18px;
-        }
+.hero-content {
+    max-width: 680px;
+}
 
-        .hero p {
-            color: #64727e;
-            font-size: 18px;
-            margin-bottom: 30px;
-            max-width: 650px;
-        }
+.hero h1 {
+    font-size: clamp(32px, 5vw, 48px);
+    color: #0b2742;
+    margin-bottom: 14px;
+    line-height: 1.4;
+}
 
-        .buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
+.hero p {
+    color: #64727e;
+    font-size: 17px;
+    line-height: 2;
+    margin-bottom: 26px;
+    max-width: 600px;
+}
 
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 48px;
-            padding: 0 24px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 15px;
-        }
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
 
-        .btn-primary {
-            background: #12618c;
-            color: #ffffff;
-        }
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    padding: 0 21px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
 
-        .btn-secondary {
-            background: #eef5f8;
-            color: #12618c;
-        }
+.btn-primary {
+    background: #12618c;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    transform: translateY(-1px);
+    opacity: 0.92;
+}
+
+.btn-secondary {
+    background: #eef5f8;
+    color: #12618c;
+}
+
+.btn-secondary:hover {
+    background: #e3f0f5;
+}
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding: 50px 0 45px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 15px;
+        line-height: 1.9;
+    }
+
+    .buttons {
+        width: 100%;
+    }
+
+    .btn {
+        flex: 1;
+        min-width: 145px;
+        padding: 0 14px;
+        font-size: 13px;
+    }
+
+}
 
         /* Sections */
 
@@ -720,40 +762,40 @@ nav a:hover::after {
 
     <section class="hero">
 
-        <div class="container">
+    <div class="container">
 
-            <div class="hero-content">
+        <div class="hero-content">
 
-                <h1>
-                    کافی‌نت حلما
-                </h1>
+            <h1>
+                کافی‌نت حلما
+            </h1>
 
-                <p>
-                    خدمات اینترنتی، اداری و ثبت‌نامی
-                    به‌صورت حضوری و غیرحضوری.
-                    خدمت موردنظر خود را انتخاب کنید و
-                    سفارش خود را برای ما ارسال کنید.
-                </p>
+            <p>
+                انجام خدمات اینترنتی، اداری و ثبت‌نامی
+                به‌صورت حضوری و غیرحضوری
+            </p>
 
-                <div class="buttons">
+            <div class="buttons">
 
-                    <a class="btn btn-primary"
-                       href="#services">
-                        مشاهده خدمات
-                    </a>
+                <a class="btn btn-primary"
+                   href="#services">
+                    مشاهده خدمات
+                </a>
 
-                    <a class="btn btn-secondary"
-                       href="tel:09194960543">
-                        📞 تماس با کافی نت حلما
-                    </a>
-
-                </div>
+                <a class="btn btn-secondary"
+                   href="https://wa.me/989194960543?text=سلام، برای دریافت خدمات کافی‌نت حلما می‌خواهم سفارش ثبت کنم."
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    📲 سفارش غیرحضوری
+                </a>
 
             </div>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
     <!-- Services -->
