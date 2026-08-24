@@ -29,35 +29,36 @@
         }
 
         /* Header */
+/* Header */
 
-        header {
-            background: #ffffff;
-            border-bottom: 1px solid #e6edf2;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+header {
+    background: #ffffff;
+    border-bottom: 1px solid #e6edf2;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 
-        .header-inner {
-            min-height: 76px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-        }
+.header-inner {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
 
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-weight: bold;
-            color: #0b2742;
-            font-size: 18px;
-        }
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    font-weight: bold;
+    color: #0b2742;
+    font-size: 17px;
+}
 
-   .brand-logo {
-    width: 68px;
-    height: 68px;
+.brand-logo {
+    width: 62px;
+    height: 62px;
     border-radius: 50%;
     object-fit: contain;
     background: #ffffff;
@@ -65,20 +66,67 @@
     flex-shrink: 0;
 }
 
-        nav {
-            display: flex;
-            gap: 24px;
-        }
+nav {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
 
-        nav a {
-            text-decoration: none;
-            color: #526270;
-            font-size: 14px;
-        }
+nav a {
+    position: relative;
+    text-decoration: none;
+    color: #526270;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 2px;
+    transition: 0.2s ease;
+}
 
-        nav a:hover {
-            color: #12618c;
-        }
+nav a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 1px;
+    width: 0;
+    height: 2px;
+    background: #12618c;
+    transition: 0.2s ease;
+}
+
+nav a:hover {
+    color: #12618c;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+
+    .header-inner {
+        min-height: 68px;
+        gap: 10px;
+    }
+
+    .brand {
+        font-size: 15px;
+        gap: 8px;
+    }
+
+    .brand-logo {
+        width: 52px;
+        height: 52px;
+    }
+
+    nav {
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+}
 
         /* Hero */
 
